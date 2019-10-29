@@ -1,5 +1,11 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'nginx'
+      args 'latest'
+    }
+
+  }
   stages {
     stage('Build') {
       steps {
